@@ -10,9 +10,9 @@
   
 ---
 ## Cautions
-> Virtual env: Poetry
-> Interpreter: Python 3.12.0
-> Git Branch: Gitflow
+> * Virtual env: Poetry
+> * Interpreter: Python 3.12.0
+> * Git Branch: Gitflow
 
 `User`, `Food` app은 임의로 생성하여 진행함.
 
