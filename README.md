@@ -18,7 +18,7 @@
 
 ### Models
 
-RichTextField 를 ckeditor.fields에서 직접 가져오기 위해 아래 설치 진행
+`RichTextField`를 ckeditor.fields에서 직접 가져오기 위해 아래 설치 진행
 ```
 $ poetry add django-ckeditor
 ```
@@ -38,11 +38,13 @@ CKEDITOR_BASEPATH = "/my_static/ckeditor/ckeditor/"
 ```
 
 ### Permissions
-IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly 권한 클래스 활용
-1. IsAuthenticatedOrReadOnly
+`IsAuthenticatedOrReadOnly`, `IsOwnerOrReadOnly` 권한 클래스 활용
+1. IsAuthenticatedOrReadOnly <br>
+  : `has_permission` 메서드를 통해 읽기 권한 모두 허용하고, 변경 권한은 로그인 여부 검사 진행
   - 로그인 여부 상관 없이 읽기 권한 모두 허용
   - 데이터 변경 요청 시 로그인 여부 검사 후 응답 반환
-2. IsOwnerOrReadOnly
+2. IsOwnerOrReadOnly <br>
+  : 모든 로그인 유저가 본인 게시물이 아니어도 수정, 삭제하는 것을 방지하도록 `has_object_permission` 메서드를 통해 요청한 사용자와 게시물의 소유자를 비교
   - 읽기 권한은 모두에게 항상 허용
   - Recipe 게시글 작성자만 수정, 삭제 가능
 
