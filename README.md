@@ -5,10 +5,17 @@
 - 핵심기능: 게시판 및 채팅
 
 ## Assigned
-- Recipe(=Board) CRUD
-*recipe App 생성하여 작성 
+- Recipe(=Board) CRUD <br>
+**recipe App 생성하여 작성*
+  
 ---
 ## Cautions
+> Virtual env: Poetry
+> Interpreter: Python 3.12.0
+> Git Branch: Gitflow
+
+`User`, `Food` app은 임의로 생성하여 진행함.
+
 ### Models
 
 RichTextField 를 ckeditor.fields에서 직접 가져오기 위해 아래 설치 진행
@@ -16,7 +23,8 @@ RichTextField 를 ckeditor.fields에서 직접 가져오기 위해 아래 설치
 $ poetry add django-ckeditor
 ```
 
-*실행하면 ckeditor WARNING이 뜨고 보안상의 이슈로 4가 아닌 5를 이용하라고 권장하는데, ckeditor5는 유료..?인 것 같고 백엔드에서 다룰 일이 따로 없어 변경하진 않았음.*
+*실행하면 ckeditor WARNING이 뜨고 보안상의 이슈로 4가 아닌 5를 이용하라고 권장하는데, <br> 
+ckeditor5는 유료..?인 것 같고 백엔드에서 다룰 일이 따로 없어 변경하진 않았음.*
 
 #### config/settings.py
 recipe 앱 및 ckeditor 기재
