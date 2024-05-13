@@ -1,8 +1,8 @@
 from rest_framework import generics
 from .models import Recipe
 from .serializers import RecipeSerializer
-from rest_framework.authentication import SessionAuthentication, BasicAuthentication
-from .permissions import IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
+# from .permissions import IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly
+from rest_framework.permissions import AllowAny
 from django.shortcuts import get_object_or_404
 
 """
@@ -17,7 +17,8 @@ IsAuthenticatedOrReadOnly 권한 클래스 사용해서
 class RecipeListCreateAPIView(generics.ListCreateAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [AllowAny]
 
     def perform_create(self, serializer):
         # post 요청한 유저를 게시물 작성자로 지정
@@ -27,7 +28,8 @@ class RecipeListCreateAPIView(generics.ListCreateAPIView):
 class RecipeDetailAPIView(generics.RetrieveUpdateDestroyAPIView):
     queryset = Recipe.objects.all()
     serializer_class = RecipeSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    # permission_classes = [IsAuthenticatedOrReadOnly, IsOwnerOrReadOnly]
+    permission_classes = [AllowAny]
 
     def get_object(self):
         # 요청 객체가 존재하지 않으면 404 반환
