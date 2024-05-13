@@ -1,5 +1,5 @@
 # OZ-Coding-School Main Team Project - Team 04
----
+
 ## Project Overview
 - 주제: 자취생들을 위한 레시피 공유 커뮤니티
 - 핵심기능: 게시판 및 채팅
@@ -15,6 +15,8 @@ RichTextField 를 ckeditor.fields에서 직접 가져오기 위해 아래 설치
 ```
 $ poetry add django-ckeditor
 ```
+
+*실행하면 ckeditor WARNING이 뜨고 보안상의 이슈로 4가 아닌 5를 이용하라고 권장하는데, ckeditor5는 유료..?인 것 같고 백엔드에서 다룰 일이 따로 없어 변경하진 않았음.*
 
 #### config/settings.py
 recipe 앱 및 ckeditor 기재
